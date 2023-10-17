@@ -1,0 +1,243 @@
+{
+              "bi_grams": "[currently seeking, experienced Software, Software Engineer, Engineer Backend, computer software, software industry, designing developing, maintaining complex, complex backend, backend systems, work closely, functional teams, seamless integration, backend functionalities, deliver highquality, highquality software, software products, Software Engineer, Engineer Backend, pivotal role, entire software, software development, requirement analysis, analysis architectural, architectural design, design coding, coding testing, strong background, backend development, solid understanding, software engineering, engineering principles, principles Additionally, building scalable, robust backend, backend systems, \u2022Design develop, maintain backend, backend software, software systems, crossfunctional teams, analyze requirements, implement solutions, meet business, business needs, \u2022Write clean, clean maintainable, efficient code, coding standards, best practices, tune backend, backend systems, maximum performance, \u2022Conduct thorough, thorough testing, fix bugs, ensure software, software quality, code reviews, provide constructive, constructive feedback, improve code, code quality, \u2022Debug production, production issues, provide timely, timely resolutions, Computer Science, related field, \u2022Proven experience, Software Engineer, Engineer Backend, similar role, \u2022Strong knowledge, backend technologies, Java Python, cloud platforms, web services, API design, \u2022Solid understanding, software development, development principles, principles data, data structures, \u2022Excellent problemsolving, analytical skills, \u2022Strong communication, collaboration skills, work independently, teamoriented environment, selfmotivated attitude, professional growth]",
+              "clean_data": "Description\nWe are currently seeking a skilled and experienced Software Engineer Backend to join our dynamic \nteam in the computer software industry In this role you will be responsible for designing developing \nand maintaining complex backend systems and applications You will work closely with cross\nfunctional teams to ensure a seamless integration of frontend and backend functionalities and to \ndeliver highquality software products to our customers\nAs a Software Engineer Backend you will play a pivotal role in the entire software development \nlifecycle You will participate in requirement analysis architectural design coding testing and \ndeployment You should have a strong background in backend development and a solid understanding \nof software engineering principles Additionally you should be familiar with various programming \nlanguages and have experience in building scalable and robust backend systems\nResponsibilities\n\u2022Design develop and maintain backend software systems with a focus on performance \nscalability and reliability\n\u2022Collaborate with crossfunctional teams to gather and analyze requirements and to design and \nimplement solutions that meet business needs\n\u2022Write clean maintainable and efficient code that adheres to coding standards and best practices\n\u2022Optimize and tune backend systems for maximum performance and scalability\n\u2022Conduct thorough testing to identify and fix bugs and ensure software quality\n\u2022Participate in code reviews and provide constructive feedback to improve code quality\n\u2022Debug production issues and provide timely resolutions or workarounds\nRequirements\n bachelor's degree in Computer Science or a related field\n\u2022Proven experience as a Software Engineer Backend or similar role\n\u2022Strong knowledge of backend technologies such as Java Python or Nodejs\n\u2022Familiarity with databases and SQL\n\u2022Experience with cloud platforms such as AWS or Azure\n\u2022Knowledge of web services and API design\n\u2022Solid understanding of software development principles data structures and algorithms\n\u2022Excellent problemsolving and analytical skills\n\u2022Strong communication and collaboration skills\nbility to work independently as well as in a teamoriented environment\n proactive and selfmotivated attitude towards learning and professional growth",
+              "emails": [],
+              "entities": [
+                            "SQL",
+                            "AWS",
+                            "Software Engineer Backend",
+                            "API"
+              ],
+              "experience": "",
+              "extracted_keywords": [
+                            "Description",
+                            "Software",
+                            "Engineer",
+                            "Backend",
+                            "team",
+                            "computer",
+                            "software",
+                            "industry",
+                            "role",
+                            "backend",
+                            "systems",
+                            "applications",
+                            "teams",
+                            "integration",
+                            "frontend",
+                            "functionalities",
+                            "highquality",
+                            "software",
+                            "products",
+                            "customers",
+                            "Software",
+                            "Engineer",
+                            "Backend",
+                            "role",
+                            "software",
+                            "development",
+                            "lifecycle",
+                            "analysis",
+                            "design",
+                            "testing",
+                            "deployment",
+                            "background",
+                            "development",
+                            "understanding",
+                            "software",
+                            "engineering",
+                            "principles",
+                            "programming",
+                            "languages",
+                            "experience",
+                            "systems",
+                            "Responsibilities",
+                            "\u2022Design",
+                            "software",
+                            "systems",
+                            "focus",
+                            "performance",
+                            "scalability",
+                            "reliability",
+                            "\u2022Collaborate",
+                            "teams",
+                            "requirements",
+                            "solutions",
+                            "business",
+                            "needs",
+                            "code",
+                            "standards",
+                            "practices",
+                            "\u2022Optimize",
+                            "tune",
+                            "backend",
+                            "systems",
+                            "performance",
+                            "scalability",
+                            "testing",
+                            "bugs",
+                            "software",
+                            "quality",
+                            "\u2022Participate",
+                            "code",
+                            "reviews",
+                            "feedback",
+                            "code",
+                            "quality",
+                            "\u2022Debug",
+                            "production",
+                            "issues",
+                            "resolutions",
+                            "workarounds",
+                            "Requirements",
+                            "bachelor",
+                            "degree",
+                            "Computer",
+                            "Science",
+                            "field",
+                            "experience",
+                            "Software",
+                            "Engineer",
+                            "Backend",
+                            "role",
+                            "\u2022Strong",
+                            "knowledge",
+                            "technologies",
+                            "Java",
+                            "Python",
+                            "Nodejs",
+                            "\u2022Familiarity",
+                            "databases",
+                            "SQL",
+                            "\u2022Experience",
+                            "cloud",
+                            "platforms",
+                            "AWS",
+                            "Azure",
+                            "\u2022Knowledge",
+                            "web",
+                            "services",
+                            "API",
+                            "design",
+                            "understanding",
+                            "software",
+                            "development",
+                            "data",
+                            "structures",
+                            "algorithms",
+                            "\u2022Excellent",
+                            "skills",
+                            "\u2022Strong",
+                            "communication",
+                            "collaboration",
+                            "skills",
+                            "bility",
+                            "teamoriented",
+                            "environment",
+                            "attitude",
+                            "learning",
+                            "growth"
+              ],
+              "keyterms": [
+                            [
+                                          "Software Engineer Backend",
+                                          0.5065341353529828
+                            ],
+                            [
+                                          "backend system",
+                                          0.04554386483887119
+                            ],
+                            [
+                                          "software",
+                                          0.04227029347891522
+                            ],
+                            [
+                                          "team",
+                                          0.024321830604835802
+                            ],
+                            [
+                                          "role",
+                                          0.023987495331682956
+                            ],
+                            [
+                                          "software development",
+                                          0.01816875949684205
+                            ],
+                            [
+                                          "requirement",
+                                          0.012433817571350881
+                            ],
+                            [
+                                          "testing",
+                                          0.008466158864532456
+                            ],
+                            [
+                                          "understanding",
+                                          0.007802908900966301
+                            ],
+                            [
+                                          "principle",
+                                          0.007712302062625339
+                            ],
+                            [
+                                          "experience",
+                                          0.007238030467058959
+                            ],
+                            [
+                                          "code",
+                                          0.005736891302087391
+                            ],
+                            [
+                                          "performance",
+                                          0.005727840503141798
+                            ],
+                            [
+                                          "application",
+                                          0.005707251884314783
+                            ],
+                            [
+                                          "scalability",
+                                          0.005595871525365457
+                            ],
+                            [
+                                          "design",
+                                          0.005294170640481479
+                            ],
+                            [
+                                          "industry",
+                                          0.005113660230282314
+                            ],
+                            [
+                                          "responsible",
+                                          0.005102216002667399
+                            ],
+                            [
+                                          "functionality",
+                                          0.00488629754701255
+                            ],
+                            [
+                                          "integration",
+                                          0.004820995340998988
+                            ]
+              ],
+              "name": [],
+              "phones": [],
+              "pos_frequencies": {
+                            "ADJ": 40,
+                            "ADP": 31,
+                            "ADV": 6,
+                            "AUX": 9,
+                            "CCONJ": 34,
+                            "DET": 13,
+                            "NOUN": 106,
+                            "PART": 9,
+                            "PRON": 11,
+                            "PROPN": 21,
+                            "SPACE": 32,
+                            "VERB": 36
+              },
+              "resume_data": "Description\nWe are currently seeking a skilled and experienced Software Engineer Backend to join our dynamic \nteam in the computer software industry. In this role, you will be responsible for designing, developing \nand maintaining complex backend systems and applications. You will work closely with cross-\nfunctional teams to ensure a seamless integration of front-end and back-end functionalities, and to \ndeliver high-quality software products to our customers.\nAs a Software Engineer Backend, you will play a pivotal role in the entire software development \nlifecycle. You will participate in requirement analysis, architectural design, coding, testing, and \ndeployment. You should have a strong background in backend development and a solid understanding \nof software engineering principles. Additionally, you should be familiar with various programming \nlanguages and have experience in building scalable and robust backend systems.\nResponsibilities\n\u2022Design, develop, and maintain backend software systems with a focus on performance, \nscalability, and reliability.\n\u2022Collaborate with cross-functional teams to gather and analyze requirements, and to design and \nimplement solutions that meet business needs.\n\u2022Write clean, maintainable, and efficient code that adheres to coding standards and best practices.\n\u2022Optimize and tune backend systems for maximum performance and scalability.\n\u2022Conduct thorough testing to identify and fix bugs and ensure software quality.\n\u2022Participate in code reviews and provide constructive feedback to improve code quality.\n\u2022Debug production issues and provide timely resolutions or workarounds.\nRequirements\n\u2022A bachelor's degree in Computer Science or a related field.\n\u2022Proven experience as a Software Engineer Backend or similar role.\n\u2022Strong knowledge of backend technologies such as Java, Python, or Node.js.\n\u2022Familiarity with databases and SQL.\n\u2022Experience with cloud platforms such as AWS or Azure.\n\u2022Knowledge of web services and API design.\n\u2022Solid understanding of software development principles, data structures, and algorithms.\n\u2022Excellent problem-solving and analytical skills.\n\u2022Strong communication and collaboration skills.\n\u2022Ability to work independently as well as in a team-oriented environment.\n\u2022A proactive and self-motivated attitude towards learning and professional growth.",
+              "tri_grams": "[seeking a skilled, skilled and experienced, experienced Software Engineer, Software Engineer Backend, Backend to join, join our dynamic, computer software industry, responsible for designing, maintaining complex backend, complex backend systems, systems and applications, closely with cross, teams to ensure, ensure a seamless, integration of frontend, frontend and backend, deliver highquality software, highquality software products, Software Engineer Backend, play a pivotal, entire software development, participate in requirement, requirement analysis architectural, analysis architectural design, architectural design coding, design coding testing, background in backend, software engineering principles, engineering principles Additionally, experience in building, scalable and robust, robust backend systems, develop and maintain, maintain backend software, backend software systems, focus on performance, scalability and reliability, \u2022Collaborate with crossfunctional, teams to gather, gather and analyze, solutions that meet, meet business needs, \u2022Write clean maintainable, maintainable and efficient, code that adheres, adheres to coding, standards and best, \u2022Optimize and tune, tune backend systems, systems for maximum, performance and scalability, \u2022Conduct thorough testing, testing to identify, identify and fix, bugs and ensure, ensure software quality, \u2022Participate in code, reviews and provide, provide constructive feedback, feedback to improve, improve code quality, \u2022Debug production issues, issues and provide, provide timely resolutions, resolutions or workarounds, bachelor's degree, degree in Computer, Software Engineer Backend, Backend or similar, knowledge of backend, Python or Nodejs, \u2022Familiarity with databases, databases and SQL, \u2022Experience with cloud, AWS or Azure, \u2022Knowledge of web, services and API, understanding of software, software development principles, development principles data, principles data structures, structures and algorithms, problemsolving and analytical, communication and collaboration, bility to work, proactive and selfmotivated, attitude towards learning, learning and professional]",
+              "unique_id": "bcfb86b6-e4c4-42e1-aee3-f91087ab0199",
+              "years": []
+}
