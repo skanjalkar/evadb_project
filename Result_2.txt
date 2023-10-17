@@ -44,7 +44,7 @@ This is the final data ['Tech Solutions is a leading technology company that cre
 This is the final data ['Job Description: Java Developer (3 years of Experience)Tech Solutions, San Francisco, CA, USAAbout UsAt Tech Solutions, we believe in the power of technology to solve complex problems. We are a dynamic,forward-thinking tech company specializing in custom software solutions for various industries.']
 This is the final data ['Front End Engineer (2 years of experience) is needed for Tech Solutions in San Francisco. The successful candidate will be proficient in modern JavaScript frameworksand libraries, HTML, CSS, and responsive design principles. This role will contribute significantly to thecreation and implementation of user interfaces for our web applications.']
 This is the final data ["Tech Solutions, San Francisco, CA, USAAbout Us is a global leader in the technology industry, specializing in the development of cutting-edgesoftware products. We're currently looking for a seasoned Product Manager with over 10 years of experienceto join our dynamic team. Job Description: Product Manager (10+ Years of Experience)"]
-This is the final data ['Software Engineer Backend is a skilled and experienced role in the computer software industry. You will be responsible for designing, developing and maintaining complex backend systems and applications. You should have a strong background in backend development and a solid understanding of software engineering principles. Additionally, you should be familiar with various programming languages and have experience in building scalable and robust systems.']
+This is the final data ['Software Engineer Backend(New Grad) is a skilled and experienced role in the computer software industry. You will be responsible for designing, developing and maintaining complex backend systems and applications. You should have a strong background in backend development and a solid understanding of software engineering principles. Additionally, you should be familiar with various programming languages and have experience in building scalable and robust systems.']
 {0: <OpenAIObject at 0x7f2c21667470> JSON: {
   "role": "assistant",
   "content": "70%"
@@ -56,7 +56,7 @@ This is the final data ['Software Engineer Backend is a skilled and experienced 
   "content": "88%"
 }, 3: <OpenAIObject at 0x7f2c21435530> JSON: {
   "role": "assistant",
-  "content": "67%"
+  "content": "0%"
 }, 4: <OpenAIObject at 0x7f2c21434e00> JSON: {
   "role": "assistant",
   "content": "86%"
