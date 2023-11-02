@@ -36,11 +36,15 @@ This application makes use of EvaDB to do a matching of resume with jobs. The hi
 
 ## Running the application:
 
+First, please setup a venv.
+
+```python3 -m venv venv_name```, then source the venv by running the next command in terminal ```source venv_name/bin/activate``` and followed by ```pip install -r requirements.txt```
+
 In order to run the application, go to ```resume_evadb_project.py``` and first insert your OpenAI key. Let's first set that up
 
 ## Setting Up Environment Variables
 
-It's a good practice to keep sensitive data like your OpenAI API key in a `.env` file to keep your project secure. Here's how to set it up without using the `dotenv` module:
+It's a good practice to keep sensitive data like your OpenAI API key in a `.env` file to keep your project secure.
 
 ### Step 1: Create a .env file
 
@@ -55,3 +59,5 @@ Before running the ```resume_evadb_project.py``` file, ensure that you run ```so
 ## Back to running the application:
 
 Load the job descriptions into JobDescription folder. Provide the path to resume in the file. I will update it so that you will just have to laod it into a resume folder, similar to JobDescription.
+
+Simply then run, ```python3 resume_evadb_project.py```
