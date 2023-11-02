@@ -33,3 +33,25 @@ This application makes use of EvaDB to do a matching of resume with jobs. The hi
 3. Using that parsed info, create context and pass it to LLM such as GPT 3.5
 4. Load job descriptions into a table using EvaQL
 5. Parse job descriptions in a for loop and for each job description using the context of resume, get a percentage matching of the resume to the particular job
+
+## Running the application:
+
+In order to run the application, go to ```resume_evadb_project.py``` and first insert your OpenAI key. Let's first set that up
+
+## Setting Up Environment Variables
+
+It's a good practice to keep sensitive data like your OpenAI API key in a `.env` file to keep your project secure. Here's how to set it up without using the `dotenv` module:
+
+### Step 1: Create a .env file
+
+Create a `.env` file in the root directory of your project. Inside this file, specify your OpenAI API key like so:
+
+```export OPENAI_API_KEY=your-api-key-here```
+
+### Step 2: Source the .env file
+
+Before running the ```resume_evadb_project.py``` file, ensure that you run ```source .env```.
+
+## Back to running the application:
+
+Load the job descriptions into JobDescription folder. Provide the path to resume in the file. I will update it so that you will just have to laod it into a resume folder, similar to JobDescription.

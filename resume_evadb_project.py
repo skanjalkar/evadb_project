@@ -124,7 +124,7 @@ def find_match():
     Returns: None
     """
     #get open ai key from .env file
-    openai.api_key = "" #OPENAI KEY
+    openai.api_key = os.getenv('OPENAI_API_KEY') #OPENAI KEY
     # use the gpt 3.5 turbo model from api of openai
     path_to_resume = "./Resume-Matcher/Data/Resumes/Shreyas_Kanjalkar_Resume.pdf"
     cursor.query("DROP TABLE IF EXISTS MyPDFs").df()
