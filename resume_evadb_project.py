@@ -6,7 +6,7 @@ from evadb.configuration.constants import EvaDB_INSTALLATION_DIR
 
 
 cursor = evadb.connect().cursor()
-path_to_job = "Resume-Matcher/Data/JobDescription/*.pdf"
+path_to_job = "JobDescription/*.pdf"
 
 def read_text_line(path, num_token=1000):
     """#write description here
@@ -126,8 +126,8 @@ def find_match():
     #get open ai key from .env file
     openai.api_key = os.getenv('OPENAI_API_KEY') #OPENAI KEY
     # use the gpt 3.5 turbo model from api of openai
-    path_to_resume = "./Resume-Matcher/Data/Resumes/Shreyas_Kanjalkar_Resume.pdf"
-    cursor.query("DROP TABLE IF EXISTS MyPDFs").df()
+    path_to_resume = "./JobDescription/job_desc_front_end_engineer.pdf"
+    # cursor.query("DROP TABLE IF EXISTS MyPDFs").df()
     cursor.query(f"LOAD PDF '{path_to_resume}' INTO MyPDFs").df()
 
 
@@ -143,7 +143,7 @@ def find_match():
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You will be provided with a block of text about someone's resume, and your task is to extract a list of keywords from it."},
+            {"role": "system", "content": "You will be provided with a block of text about someone's resume, and your task is to find out what the person is good at, check the resume and give me a summary of the resume."},
             {"role": "user", "content": f"{list_string}"}
         ]
     )
