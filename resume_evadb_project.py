@@ -3,7 +3,7 @@ import openai
 import os
 from collections import defaultdict
 from evadb.configuration.constants import EvaDB_INSTALLATION_DIR
-
+import time
 
 cursor = evadb.connect().cursor()
 path_to_job = "JobDescription/*.pdf"
@@ -102,8 +102,8 @@ def text_summarizer():
         temp_data = cursor.query(f"SELECT TextSummarizer(data) FROM JobDescriptionSummary WHERE _row_id = {i+1}").df()
         final_data.append(temp_data['summary_text'].tolist())
 
-    for data in final_data:
-        print("This is the final data", data)
+    # for data in final_data:
+    #     print("This is the final data", data)
     Text_feat_function_query = f"""CREATE FUNCTION IF NOT EXISTS SentenceFeatureExtractor
             IMPL  '{EvaDB_INSTALLATION_DIR}/functions/sentence_feature_extractor.py';
             """
@@ -124,10 +124,10 @@ def find_match():
     Returns: None
     """
     #get open ai key from .env file
-    openai.api_key = os.getenv('OPENAI_API_KEY') #OPENAI KEY
+    openai.api_key = os.environ["OPENAI_API_KEY"] #OPENAI KEY
     # use the gpt 3.5 turbo model from api of openai
     path_to_resume = "./JobDescription/job_desc_front_end_engineer.pdf"
-    # cursor.query("DROP TABLE IF EXISTS MyPDFs").df()
+    cursor.query("DROP TABLE IF EXISTS MyPDFs").df()
     cursor.query(f"LOAD PDF '{path_to_resume}' INTO MyPDFs").df()
 
 
@@ -143,7 +143,7 @@ def find_match():
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": "You will be provided with a block of text about someone's resume, and your task is to find out what the person is good at, check the resume and give me a summary of the resume."},
+            {"role": "system", "content": "You will be provided with a block of text about someone's resume, and your task is to find out what the person is good at, understand the difficulty of each work they have done so far."},
             {"role": "user", "content": f"{list_string}"}
         ]
     )
@@ -165,7 +165,17 @@ def find_match():
 
 
 def main():
+    start = time.time()
+    print("------------------------------------------------------------------------")
+    print("Welcome to EvaDB, the database that can understand your data")
+    print("------------------------------------------------------------------------")
+    print("Starting the process of summarizing the job description")
     find_match()
+    end = time.time()
+    print("------------------------------------------------------------------------")
+    print("Time taken to run the program is:", end - start)
+    print("------------------------------------------------------------------------")
+
 
 if __name__ == '__main__':
     main()
