@@ -1,12 +1,16 @@
+import os
+import time
+from collections import defaultdict
+
 import evadb
 import openai
-import os
-from collections import defaultdict
 from evadb.configuration.constants import EvaDB_INSTALLATION_DIR
-import time
 
 cursor = evadb.connect().cursor()
-path_to_job = "JobDescription/*.pdf"
+
+PATH_TO_JOB = "JobDescription/*.pdf"
+OUTPUT_DIRECTORY = "./output_directory"
+PATH_TO_RESUME = "./JobDescription/job_desc_front_end_engineer.pdf"
 
 def read_text_line(path, num_token=1000):
     """#write description here
@@ -62,7 +66,7 @@ def text_summarizer():
         MODEL 'facebook/bart-large-cnn';""").df()
 
     cursor.query("""DROP TABLE IF EXISTS JobDescription""").df()
-    cursor.query(f"LOAD PDF '{path_to_job}' INTO JobDescription").df()
+    cursor.query(f"LOAD PDF '{PATH_TO_JOB}' INTO JobDescription").df()
 
     res = cursor.query("SELECT * FROM JobDescription").df()
     # res = res.tolist()
@@ -72,7 +76,7 @@ def text_summarizer():
     for _row_id, _data in res.iterrows():
         # get all data for same row id given by _data[_row_id]
         info[_data['_row_id']] += _data['data']
-    directory_path = "./output_directory"
+    directory_path = OUTPUT_DIRECTORY
     write_dict_to_files(info, directory_path)
 
 
@@ -126,9 +130,9 @@ def find_match():
     #get open ai key from .env file
     openai.api_key = os.environ["OPENAI_API_KEY"] #OPENAI KEY
     # use the gpt 3.5 turbo model from api of openai
-    path_to_resume = "./JobDescription/job_desc_front_end_engineer.pdf"
+
     cursor.query("DROP TABLE IF EXISTS MyPDFs").df()
-    cursor.query(f"LOAD PDF '{path_to_resume}' INTO MyPDFs").df()
+    cursor.query(f"LOAD PDF '{PATH_TO_RESUME}' INTO MyPDFs").df()
 
 
     data = cursor.query("""
@@ -172,7 +176,7 @@ def find_match():
     print(bill['data'][0]['cost'])
 
     print("------------------------------------------------------------------------")
-    
+
 
 
 def main():
