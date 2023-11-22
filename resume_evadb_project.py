@@ -163,6 +163,17 @@ def find_match():
     # print(completion.choices[0].message)
     print(replies)
 
+    # Write benchmark for how much open ai is costing per query
+    bill = openai.Billing.retrieve()
+
+    print("------------------------------------------------------------------------")
+
+    print(bill)
+    print(bill['data'][0]['cost'])
+
+    print("------------------------------------------------------------------------")
+    
+
 
 def main():
     start = time.time()
