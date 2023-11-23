@@ -23,7 +23,7 @@ const images = upload.fields([{
   name:'image2'
 }]);
 
-router.post('/Swap', images, function(req, res, next){
+router.post('/Find', images, function(req, res, next){
   const spawn = require("child_process").spawn;
   var path1 = req.files.image1[0].path;
   var path2 = req.files.image2[0].path;
