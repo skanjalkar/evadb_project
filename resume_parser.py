@@ -31,7 +31,7 @@ class Parser(AbstractFunction):
 
 
     @setup(cacheable=True, function_type="chat-completion", batchable=True)
-    def setup( self, model="gpt-3.5-turbo", temperature: float = 0,) -> None:
+    def setup( self, model="gpt-3.5-turbo-1106", temperature: float = 0,) -> None:
         # assert model in _VALID_CHAT_COMPLETION_MODEL, f"Unsupported ChatGPT {model}"
         self.model = model
         self.temperature = temperature
@@ -66,7 +66,7 @@ class Parser(AbstractFunction):
         responses = []
 
         for prompt in content:
-            response = openai.ChatCompletion.create(model="gpt-3.5-turbo", \
+            response = openai.ChatCompletion.create(model="gpt-3.5-turbo-1106", \
                                                     temperature=0.2, \
                                                     messages=[{"role": "user", "content": prompt}])
             response_text = response.choices[0].message.content
