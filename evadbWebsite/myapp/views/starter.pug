@@ -1,0 +1,89 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+
+append styles
+	// Bootstrap theme
+	link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css")
+	// Custom styles for this template
+	link(href='./stylesheets/theme.css', rel='stylesheet')
+
+block scripts
+	script(src='./javascripts/addTwo.js')
+
+block body
+	// Fixed navbar
+	nav.navbar.navbar-inverse.navbar-fixed-top
+		.container
+			.navbar-header
+				//- button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+				//- 	span.sr-only Toggle navigation
+				//- 	span.icon-bar
+				//- 	span.icon-bar
+				//- 	span.icon-bar
+				a.navbar-brand(href='#') Home
+			#navbar.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					li
+						a(href='https://zen1405.github.io/') About
+					li
+						a(href='mailto:skanjalkar@wpi.edu') Contact
+					li
+						a(href='https://www.linkedin.com/in/shreyas1405/') LinkedIn
+
+
+	.container.theme-showcase(role='main')
+		// Main jumbotron for a primary marketing message or call to action
+		.jumbotron
+			h1 FaceSwap in two images.
+			p
+				| First image is the image on which the face will be swapped. Please ensure that the images you submit has same aspect ratio.
+		.page-header
+			h1 Description
+			p
+				| This project implements an end to end pipeline which swaps faces in two images; which was used by Snapchat back in early 2010s. The approach is divided into 5 steps:
+				li
+					| Input Faces
+				li
+					| Detect Face Fiducials
+				li
+					| Warp to other face
+				li
+					| Replace Face
+				li
+					| Blending
+			p
+				| Facial Landmarks are detected using Dlib. Next using the points detected using Dlib, we create delaunay triangulation for first face. After that;
+				| We map the same triangles in the second face by mapping features of the face. For example, jaw of person 1 to jaw of person 2, eye to eye, lips to lip and so on.
+				| After doing this for all the points, we get "similar triangles" for both faces. Great! Now we have the triangles, however we still only have the corner points and not each point in the traingle.
+				| This will cause an issue when warping the image. To fix this we do the following:
+				li
+					| For each triangle in target face, compute the Barycentric Coordinate
+				li
+					| Compute the corresponding pixel position in the source image and map it on target image using Barycentric Coordinates.
+				li
+					| Even though the triangles are similar, they are not the same shape. In order to fix the "missing" points, we use interpolation.
+			p
+				| Now we have mapped all points, and replaced the face. However we still don't get the perfect blend. In order to get seamless blending, we do Poissons Blending.
+		.page-header
+			h1 Examples
+			p
+				figure(class = "examples", id="example")
+					img(style="display: inline; padding: 50px;", src='./images/awsImages/image2-1668811578261-988159712.jpg', class="examples" width=320, height=320)
+					img(style="display: inline; padding: 50px;", src='./images/awsImages/image1-1668811578259-586233759.jpg', width=320, height=320)
+					img(style="display: inline; padding: 50px;", src='./images/awsOutput/face1.jpg3face2.jpg', width=320, height=320)
+			p
+				| The above example shows two input images and the swapped image.
+		.page-header
+			h1 Input Here
+		form(id="form")
+			p
+				div(class="form-group", id="sudo")
+					input.btn.btn.default(style="display: inline;", type="file", class="form-control-file", name="image1")
+					input.btn.btn.default(style="display: inline;", type="file", class="form-control-file", name="image2")
+					input.btn.btn-default(style="display: inline;", type='submit', id="Swap", value="Swap!")
+
+
+		.page-foooter
+			h1 Issues?
+		.well
+			p
+				| If you face any issues, feel free to create an issue on github <a href="https://github.com/zen1405/awsWebsite/issues" target="_bank">here</a>

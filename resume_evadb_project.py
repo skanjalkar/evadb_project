@@ -52,7 +52,7 @@ def text_summarizer(cursor):
     # drop table if exists
     cursor.query("""DROP TABLE IF EXISTS JobDescriptionSummary""").df()
     cursor.query(f"""LOAD DOCUMENT '{directory_path}/*.txt' INTO JobDescriptionSummary""").execute()
-    print(cursor.query("""SELECT * FROM JobDescriptionSummary""").df())
+    # print(cursor.query("""SELECT * FROM JobDescriptionSummary""").df())
     # print(info[1])
     # cursor.query(f"""INSERT INTO JobDescriptionSummary (summary) VALUES ('{info[1]}')""").df()
     # for key, val in info.items():
@@ -67,7 +67,7 @@ def text_summarizer(cursor):
     # #print max_id
     max_id = max_id['_row_id'].tolist()
     max_id = int(max_id[-1])
-    print(max_id)
+    # print(max_id)
     final_data = []
     for i in range(max_id):
         temp_data = cursor.query(f"SELECT TextSummarizer(data) FROM JobDescriptionSummary WHERE _row_id = {i+1}").df()
@@ -117,7 +117,7 @@ def find_match(cursor):
     )
     resume_summary = completion.choices[0].message
     # store resume summary so gptcache can use it
-
+    
     replies = {}
     final_data_jobs = text_summarizer(cursor=cursor)
     for i, val in enumerate(final_data_jobs):
