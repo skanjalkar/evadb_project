@@ -1,6 +1,7 @@
 import os
 import time
 from collections import defaultdict
+import sys
 
 import evadb
 import openai
@@ -8,7 +9,8 @@ from evadb.configuration.constants import EvaDB_INSTALLATION_DIR
 
 from utils import read_text_line, write_dict_to_files
 
-import gptcache
+from gptcache import cache
+
 
 
 PATH_TO_JOB = "JobDescription/*.pdf"
@@ -16,11 +18,40 @@ OUTPUT_DIRECTORY = "./output_directory"
 PATH_TO_RESUME = "./JobDescription/job_desc_front_end_engineer.pdf"
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+cache.init() # keep a global cache rather than function level cache
+cache.set_openai_key() # don't have to but following documentation
 
 def connect_to_database():
     """Connect to the EvaDB database and return a cursor."""
     return evadb.connect().cursor()
 
+def response_text(openai_resp):
+    return openai_resp['choices'][0]['message']['content']
+
+# use gpt cache to store the resume summary
+# write a funnction for it
+def resume_summary_cache(list_data):
+    """
+    """
+
+    print("Cache loading.....")
+    start_time = time.time()
+    print("------------------------------------------------------------------------")
+    response = openai.ChatCompletion.create(
+        model='gpt-3.5-turbo',
+        messages=[
+            {
+                "role": "system", "content": "You will be provided with a block of text about someone's resume, and your task is to find out what the person is good at, understand the difficulty of each work they have done so far.",
+                'role': 'user', 'content': f'{list_data}'
+            }
+        ],
+    )
+
+def twoprints():
+    """ Void function which prints two empty lines
+    """
+    print()
+    print()
 
 def text_summarizer(cursor):
     """Summary of the function: This function will take the job description and summarize it using the hugging face model in built in evadb
@@ -108,16 +139,25 @@ def find_match(cursor):
     list_string = ''.join(list_data)
 
 
-    completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo-1106",
-        messages=[
-            {"role": "system", "content": "You will be provided with a block of text about someone's resume, and your task is to find out what the person is good at, understand the difficulty of each work they have done so far."},
-            {"role": "user", "content": f"{list_string}"}
-        ]
-    )
-    resume_summary = completion.choices[0].message
+    # completion = openai.ChatCompletion.create(
+    #     model="gpt-3.5-turbo-1106",
+    #     messages=[
+    #         {"role": "system", "content": "You will be provided with a block of text about someone's resume, and your task is to find out what the person is good at, understand the difficulty of each work they have done so far."},
+    #         {"role": "user", "content": f"{list_string}"}
+    #     ]
+    # )
+    # resume_summary = completion.choices[0].message
     # store resume summary so gptcache can use it
-    
+
+    twoprints()
+
+    print("------------------------------------------------------------------------")
+    print("Using GPTcache to check if resume summary is cached, if not then cache it")
+    resume_summary = resume_summary_cache(list_string)
+    print("------------------------------------------------------------------------")
+
+    twoprints()
+
     replies = {}
     final_data_jobs = text_summarizer(cursor=cursor)
     for i, val in enumerate(final_data_jobs):
@@ -133,10 +173,12 @@ def find_match(cursor):
                 {"role": "user", "content": f"Match the resume with the job description: {val} and only give me a score based on % from 0 to 100 based on how well the resume keywords matches the job description. Don't give me any extra information, only the percentage score."}
             ]
         )
+        twoprints()
         end = time.time()
         print("------------------------------------------------------------------------")
         print("Time taken to match each job with resume is: ", end - start)
         print("------------------------------------------------------------------------")
+        twoprints()
         replies[i] = completion.choices[0].message
     # print(completion.choices[0].message)
     print(replies)
