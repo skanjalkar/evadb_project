@@ -1,5 +1,5 @@
-const ip = "http://54.147.77.174"
-// const ip = "http://localhost:3000"
+// const ip = "http://54.147.77.174"
+const ip = "http://localhost:3000"
 
 
 function addTwoNumbers(p1, p2) {
@@ -68,12 +68,12 @@ window.onload = function () {
     document.getElementById("sudo").appendChild(img);
   }
 
-  document.getElementById("Swap").addEventListener("click", function (event) {
+  document.getElementById("Find").addEventListener("click", function (event) {
     event.preventDefault()
     var form = document.getElementById("form");
     var formData = new FormData(form);
     console.log(formData)
-    fetch(ip + "/Swap", {
+    fetch(ip + "/Find", {
       method: 'POST',
       body: formData,
     }).then(function (x) {

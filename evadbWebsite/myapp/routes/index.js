@@ -23,13 +23,13 @@ const images = upload.fields([{
   name:'image2'
 }]);
 
-router.post('/Swap', images, function(req, res, next){
+router.post('/Find', images, function(req, res, next){
   const spawn = require("child_process").spawn;
   var path1 = req.files.image1[0].path;
   var path2 = req.files.image2[0].path;
   var original_name1 = req.files.image1[0].originalname
   var original_name2 = req.files.image2[0].originalname
-  const pyProcess = spawn('python3', ["/home/ubuntu/awsFaceSwap/Wrapper.py", path1, path2, original_name1, original_name2])
+  const pyProcess = spawn('python3', ["./../../resume_evadb_project.py", path1, path2, original_name1, original_name2])
   pyProcess.stdout.on('data', (data)=>{
     var path = {
       "op_path": data.toString('utf-8')
