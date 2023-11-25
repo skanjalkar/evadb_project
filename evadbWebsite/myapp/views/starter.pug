@@ -1,0 +1,82 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+
+append styles
+	// Bootstrap theme
+	link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css")
+	// Custom styles for this template
+	link(href='./stylesheets/theme.css', rel='stylesheet')
+
+block scripts
+	script(src='./javascripts/addTwo.js')
+
+block body
+	// Fixed navbar
+	nav.navbar.navbar-inverse.navbar-fixed-top
+		.container
+			.navbar-header
+				//- button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+				//- 	span.sr-only Toggle navigation
+				//- 	span.icon-bar
+				//- 	span.icon-bar
+				//- 	span.icon-bar
+				a.navbar-brand(href='#') Home
+			#navbar.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					li
+						a(href='https://skanjalkar.github.io/') About
+					li
+						a(href='mailto:skanjalkar3@gatech.edu') Contact
+					li
+						a(href='https://www.linkedin.com/in/shreyas1405/') LinkedIn
+
+
+	.container.theme-showcase(role='main')
+		// Main jumbotron for a primary marketing message or call to action
+		.jumbotron
+			h1 Find the perfect job for you!
+			p
+				| Upload the PDF of your resume (we only support PDF as of now!) and we will find the perfect job for you!
+		.page-header
+			h1 Description
+			p
+				| To give a brief idea of how the project works, we have the following steps:
+				li
+					| Upload resume
+				li
+					| EvaDB parses the resume and extracts the skills
+				li
+					| EvaDB calls a personal chatgpt function to understand the skills and experience of the person whose resume is being uploaded
+				li
+					| Then we run a script which generates random job descriptions and we use the skills extracted from the resume to find the best job for the person
+				li
+					| Finally we display the % match of the job with the resume
+		.page-header
+			h1 EvaDB
+			p
+				EvaDB is a cutting-edge database system specifically designed to empower the development of AI-powered applications. At its core, EvaDB serves as a robust query engine that seamlessly integrates with various data sources, such as PostgreSQL, S3 buckets, and standard SQL database systems. This integration allows developers to build scalable AI applications over data stored in these systems using straightforward SQL queries. The system's design is highly conducive to the development of AI models for a range of purposes, including regression, classification, and time series forecasting. With EvaDB, software developers can create AI applications in just a few lines of code, significantly simplifying the development process for both structured and unstructured data.
+				You can access it <a href="https://github.com/georgia-tech-db/evadb" target="_bank">here</a>
+		.page-header
+			p
+				figure(class="evadb", id="evadb")
+					img(style="display: center; padding: 50px;", src='./images/evadb.png', width=640, height=320)
+			//- h1 Examples
+		//- 	p
+		//- 		figure(class = "examples", id="example")
+		//- 			img(style="display: inline; padding: 50px;", src='./images/awsImages/image2-1668811578261-988159712.jpg', class="examples" width=320, height=320)
+		//- 			img(style="display: inline; padding: 50px;", src='./images/awsImages/image1-1668811578259-586233759.jpg', width=320, height=320)
+		//- 			img(style="display: inline; padding: 50px;", src='./images/awsOutput/face1.jpg3face2.jpg', width=320, height=320)
+		//- 	p
+		//- 		| The above example shows two input images and the swapped image.
+		//- .page-header
+			//- h1 Input Here
+		form(id="form")
+			p
+				div(class="form-group", id="sudo")
+					input.btn.btn.default(style="display: inline;", type="file", class="form-control-file", name="resume", id="resume", accept=".pdf")
+					input.btn.btn-default(style="display: inline;", type='submit', id="Find", value="Find!")
+
+		.page-foooter
+			h1 Issues?
+		.well
+			p
+				| If you face any issues, feel free to create an issue on github <a href="https://github.com/skanjalkar/evadb_resume_matcher_app/issues" target="_bank">here</a>

@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block scripts
+    block content
+    <label for="firstNum">First Number</label>
+    <input type="text" id="firstNum" name="firstNum"><br><br>
+    <label for="secondNum">Second Number</label>
+    <input type="text" id="secondNum" name="secondNum"><br><br>
+    <input type="submit" id="submitButton" value="Submit">
+    <input type="submit" id="serverSubmit" value="Server Submit">
+    <input type="submit" id="pythonSubmit" value="Python Submit">
+    //- <form>
+    //-   <div>
+    //-     <label>Select file to upload</label>
+    //-     <input type="file" id="image1">
+    //-     <input type="file" id="image2">
+    //-   </div>
+    //-   <input type="submit" id="swap" value="Swap!">
+    //- </form>
+    <form id="form">
+      <div class="form-group">
+        <input type="file" class="form-control-file" name="image1">
+        <input type="file" name="image2">
+        <input type="submit" id="Swap" value="Get me the stats!" class="btn btn-default">
+      </div>
+    </form>
+    //- <img src="./images/dota-2-antimage-anti-mage-wallpaper.jpg" alt="Girl in a jacket" width="500" height="600">
+
+
