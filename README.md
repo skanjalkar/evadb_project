@@ -61,3 +61,6 @@ Before running the ```resume_evadb_project.py``` file, ensure that you run ```so
 Load the job descriptions into JobDescription folder. Provide the path to resume in the file. I will update it so that you will just have to laod it into a resume folder, similar to JobDescription.
 
 Simply then run, ```python3 resume_evadb_project.py```
+
+
+If you want to run the front end, navigate to myapp by using ```cd evadbWebsite/myapp``` and then running the following command ```DEBUG=myapp:* npm start```
